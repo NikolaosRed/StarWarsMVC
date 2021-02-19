@@ -1,0 +1,121 @@
+﻿@model StarWars.Core.Movie
+
+@{
+	ViewBag.Title = "Delete";
+}
+
+<h4 style="width:50%; background-color: gold; text-align:center">Are you sure you want to delete @Model.Title?</h4>
+<div>
+	<hr />
+	<dl class="dl-horizontal">
+		<dt>
+			@Html.DisplayNameFor(model => model.Title)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.Title)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.EpisodeId)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.EpisodeId)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.OpeningCrawl)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.OpeningCrawl)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.Director)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.Director)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.Producer)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.Producer)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.ReleaseDate)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.ReleaseDate)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.Characters)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.Characters)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.Planets)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.Planets)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.Starships)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.Starships)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.Vehicles)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.Vehicles)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.Species)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.Species)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.AverageRating)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.AverageRating)
+		</dd>
+
+	</dl>
+
+
+	@using (Html.BeginForm())
+	{
+		@Html.AntiForgeryToken()
+
+		<div class="form-actions no-color">
+			<input type="submit" value="Delete" class="btn btn-danger" /> 
+			<a asp-action="Index" class="btn btn-dark">Back to list</a>
+		</div>
+	}
+
+
+</div>

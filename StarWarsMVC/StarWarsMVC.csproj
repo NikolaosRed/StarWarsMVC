@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="StarWars.Core\**" />
+    <Compile Remove="StarWars.Data\**" />
+    <Content Remove="StarWars.Core\**" />
+    <Content Remove="StarWars.Data\**" />
+    <EmbeddedResource Remove="StarWars.Core\**" />
+    <EmbeddedResource Remove="StarWars.Data\**" />
+    <None Remove="StarWars.Core\**" />
+    <None Remove="StarWars.Data\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="StarWars.Data\StarWars.Data.csproj" />
+  </ItemGroup>
+
+</Project>

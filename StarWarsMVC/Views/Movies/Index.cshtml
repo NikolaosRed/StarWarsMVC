@@ -1,0 +1,76 @@
+﻿@model List<StarWars.Core.Movie>
+
+@{
+	ViewBag.Title = "Movies";
+}
+
+<h2>The list of movies are displayed below</h2>
+
+<p>
+	<a asp-controller="Movies" asp-action="Create"><i class="fas fa-plus-circle"></i></a>
+</p>
+
+<script src="https://kit.fontawesome.com/88fd76f067.js" crossorigin="anonymous"></script>
+
+<table class="table">
+	<tr>
+		<th>
+			Title
+		</th>
+		<th>
+			EpisodeId
+		</th>
+		@*<th>
+			OpeningCrawl
+		</th>*@
+		<th>
+			Director
+		</th>
+		<th>
+			Producer
+		</th>
+		<th>
+			ReleaseDate 
+		</th>
+		<th></th>
+	</tr>
+
+	@foreach (var item in Model)
+	{
+		<tr>
+			<td>
+				@Html.DisplayFor(modelItem => item.Title)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.EpisodeId)
+			</td>
+			@*<td>
+				@Html.DisplayFor(modelItem => item.OpeningCrawl)
+			</td>*@
+			<td>
+				@Html.DisplayFor(modelItem => item.Director)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Producer)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.ReleaseDate)
+			</td>
+			<td>
+				@if(item.MovieId == 0)
+				{
+					<a asp-controller="Movies" asp-action="Details" asp-route-Id="@Model.IndexOf(item)"><i class="fas fa-info-circle"></i></a>
+				}
+				@if (item.MovieId > 0)
+				{
+					<a asp-controller="Movies" asp-action="Details" asp-route-Id="@item.MovieId"><i class="fas fa-info-circle"></i></a>
+					<a asp-controller="Movies" asp-action="Edit" asp-route-Id="@item.MovieId"><i class="fas fa-edit"></i></a>
+					<a asp-controller="Movies" asp-action="Delete" asp-route-Id="@item.MovieId"><i class="fas fa-trash-alt"></i></a>
+				}
+			</td>
+		</tr>
+	}
+
+</table>
+
+

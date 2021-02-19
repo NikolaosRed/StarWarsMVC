@@ -1,0 +1,65 @@
+﻿@model StarWars.Core.Movie
+
+@{
+	ViewBag.Title = "Details";
+}
+
+<h4>You are now vewing details for the movie: @Model.Title</h4>
+
+
+
+	<link href="~/css/site.css" rel="stylesheet" />
+
+<table class="table table-bordered table-striped" style="width:100%" >
+	<tbody>
+		<tr>
+			<td width="12%">Episode</td>
+			<td>@Model.EpisodeId</td>
+		</tr>
+		<tr>
+			<td>Title</td>
+			<td>@Model.Title</td>
+		</tr>
+		<tr>
+			<td>Description</td>
+			<td>@Model.OpeningCrawl</td>
+		</tr>
+		<tr>
+			<td>Director</td>
+			<td>@Model.Director</td>
+		</tr>
+		<tr>
+			<td>Producer</td>
+			<td>@Model.Producer</td>
+		</tr>
+		<tr>
+			<td>Release date</td>
+			<td>@Model.ReleaseDate</td>
+		</tr>
+		<tr>
+			<td>Characters</td>
+			<td>@Model.Characters</td>
+		</tr>
+		<tr>
+			<td>Planets</td>
+			<td>@Model.Planets</td>
+		</tr>
+		<tr>
+			<td>Starships</td>
+			<td>@Model.Starships</td>
+		</tr>
+		<tr>
+			<td>Species</td>
+			<td>@Model.Species</td>
+		</tr>
+		<tr>
+			<td>Rating (0 - 10)</td>
+			<td>@String.Format("{0:0.0}", Model.AverageRating)</td>
+		</tr>
+	</tbody>
+</table>
+
+<div class="btn-group" role="group">
+	<a asp-action="Rate" asp-route-Id="@Model.EpisodeId" asp-route-title="@Model.Title" class="btn btn-outline-danger">Rate</a>
+	<a asp-action="Index" class="btn btn-outline-dark">Back to list</a>
+</div>
